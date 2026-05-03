@@ -1,89 +1,137 @@
 "use client";
+
 import { useState } from "react";
-import { FiChevronLeft, FiChevronRight, FiArrowRight } from "react-icons/fi";
 import projects from "./projects.json";
+import { FiArrowRight, FiGithub, FiX } from "react-icons/fi";
 
 export default function Project() {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-    const nextProject = () => {
-        setCurrentIndex((prev) => (prev + 1) % projects.length);
-    };
+  return (
+    <section id="projects" className="mb-50 px-6">
+      <div className="mx-auto max-w-7xl">
 
-    const prevProject = () => {
-        setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
-    };
-
-    const project = projects[currentIndex];
-
-    return (
-        <section id="projects" className="mb-28 px-4">
-            <div className="mx-auto max-w-7xl">
-                <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-8">
-                    <div>
-                        <h2 className="text-4xl font-bold text-black dark:text-white">Featured Projects</h2>
-                        <p className="text-lg text-gray-700 dark:text-gray-300">A refined selection of recent work with clean interaction and clarity.</p>
-                    </div>
-                    <a className="hidden md:inline-flex items-center gap-2 text-sm font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-all" href="/projects">
-                        See More Projects
-                        <FiArrowRight className="text-base" />
-                    </a>
-                </div>
-
-                <div className="relative group rounded-4xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-xl">
-                    <div className="flex flex-col lg:flex-row">
-                        <div className="lg:w-3/5 h-72 lg:h-80 overflow-hidden">
-                            <img className="w-full h-full object-cover" alt={project.title} src={project.image}/>
-                        </div>
-                        <div className="lg:w-2/5 p-8 flex flex-col justify-center gap-6">
-                            <div className="inline-flex rounded-full bg-gray-100 dark:bg-gray-800 px-4 py-2 text-sm font-medium text-black dark:text-white">
-                                {project.techStack.join(" • ")}
-                            </div>
-                            <div>
-                                <h3 className="text-3xl font-bold text-black dark:text-white">{project.title}</h3>
-                                <p className="mt-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">{project.description}</p>
-                            </div>
-                            <div className="flex flex-wrap gap-4">
-                                {project.demoLink && (
-                                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-black dark:bg-white px-6 py-3 text-sm font-semibold text-white dark:text-black transition-all hover:bg-gray-800 dark:hover:bg-gray-200">
-                                        View Demo
-                                    </a>
-                                )}
-                                {project.codeLink && (
-                                    <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-gray-300 dark:border-gray-700 px-6 py-3 text-sm font-semibold text-black dark:text-white transition-all hover:bg-gray-50 dark:hover:bg-gray-800">
-                                        Codebase
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    <button onClick={prevProject} className="absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-2xl bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center text-black dark:text-white border border-gray-200 dark:border-gray-700 transition-transform hover:scale-110">
-                        <FiChevronLeft className="text-xl" />
-                    </button>
-                    <button onClick={nextProject} className="absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-2xl bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center text-black dark:text-white border border-gray-200 dark:border-gray-700 transition-transform hover:scale-110">
-                        <FiChevronRight className="text-xl" />
-                    </button>
-                </div>
-
-                <div className="mt-6 flex justify-center gap-2">
-                    {projects.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setCurrentIndex(index)}
-                            className={`rounded-full transition-all ${
-                                index === currentIndex ? "bg-black dark:bg-white h-2 w-8" : "bg-gray-300 dark:bg-gray-600 h-2 w-2"
-                            }`}
-                        />
-                    ))}
-                </div>
-
-                <div className="mt-8 flex justify-center md:hidden">
-                    <a className="inline-flex items-center gap-2 text-sm font-medium text-black dark:text-white" href="/projects">
-                        See All Projects
-                        <FiArrowRight className="text-base" />
-                    </a>
-                </div>
+        {/* HEADER */}
+        <div className="flex flex-col items-center text-center gap-4 mb-10">
+            <div>
+                <h2 className="text-4xl font-bold text-black dark:text-white">
+                    Featured Projects
+                </h2>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mt-2">
+                    A selection of projects showcasing practical solutions, clean architecture, and thoughtful design.
+                </p>
             </div>
-        </section>
-    );
+        </div>
+        
+        {/* GRID */}
+        <div 
+            id="project"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
+        >
+
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md hover:shadow-xl transition"
+            >
+
+              {/* IMAGE */}
+              <div
+                onClick={() => setSelectedImage(project.image)}
+                className="h-48 w-full overflow-hidden cursor-pointer group"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-6 flex flex-col gap-4">
+
+                <h3 className="text-xl font-bold">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* TECH STACK */}
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-[12px] px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* BUTTONS */}
+                <div className="flex gap-4 pt-2 items-center">
+
+                  {project.demoLink && (
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 rounded-xl bg-black text-white text-sm font-semibold hover:bg-red-600 transition"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+
+                  {project.codeLink && (
+                    <a
+                      href={project.codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-10 h-10 rounded-xl bg-black text-white hover:bg-gray-800 transition"
+                    >
+                      <FiGithub className="text-lg" />
+                    </a>
+                  )}
+
+                </div>
+
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+      {/* IMAGE MODAL */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-w-4xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-4 -right-4 bg-white text-black rounded-full p-2 shadow-lg hover:scale-105 transition"
+            >
+              <FiX size={20} />
+            </button>
+
+            {/* IMAGE */}
+            <img
+              src={selectedImage}
+              alt="Project preview"
+              className="w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
+
+    </section>
+  );
 }
