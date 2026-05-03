@@ -1,0 +1,50 @@
+[
+  {
+    "name": "JavaScript",
+    "icon": "SiJavascript",
+    "experience": "2+ years",
+    "projects": 5,
+    "level": "Advanced",
+    "progress": 92
+  },
+  {
+    "name": "React",
+    "icon": "SiReact",
+    "experience": "2+ years",
+    "projects": 4,
+    "level": "Advanced",
+    "progress": 90
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "SiPostgresql",
+    "experience": "1+ year",
+    "projects": 2,
+    "level": "Intermediate",
+    "progress": 74
+  },
+  {
+    "name": "Node.js",
+    "icon": "SiNodedotjs",
+    "experience": "1+ year",
+    "projects": 3,
+    "level": "Intermediate",
+    "progress": 78
+  },
+  {
+    "name": "Tailwind",
+    "icon": "SiTailwindcss",
+    "experience": "2+ years",
+    "projects": 5,
+    "level": "Advanced",
+    "progress": 88
+  },
+  {
+    "name": "Git",
+    "icon": "SiGit",
+    "experience": "2+ years",
+    "projects": 6,
+    "level": "Advanced",
+    "progress": 84
+  }
+]

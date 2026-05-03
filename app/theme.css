@@ -1,0 +1,73 @@
+:root {
+  /* color palette */
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-shadow: rgba(15, 23, 42, 0.08);
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-muted: #64748b;
+  --color-primary: #0f172a;
+  --color-accent: #2563eb;
+  --color-accent-soft: #e0f2fe;
+  --color-success: #16a34a;
+  --color-surface-strong: #f1f5f9;
+
+  /* card / UI surfaces */
+  --surface-card: #ffffff;
+  --surface-muted: #f8fafc;
+}
+
+html.dark {
+  --color-background: #020617;
+  --color-surface: #111827;
+  --color-border: #334155;
+  --color-shadow: rgba(15, 23, 42, 0.6);
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-muted: #94a3b8;
+  --color-primary: #f8fafc;
+  --color-accent: #60a5fa;
+  --color-accent-soft: #1e293b;
+  --color-success: #22c55e;
+  --color-surface-strong: #111827;
+
+  --surface-card: #0f172a;
+  --surface-muted: #111827;
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+.bg-background {
+  background-color: var(--color-background);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-surface-strong {
+  background-color: var(--color-surface-strong);
+}
+
+.text-primary {
+  color: var(--color-text);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.border-base {
+  border-color: var(--color-border);
+}
