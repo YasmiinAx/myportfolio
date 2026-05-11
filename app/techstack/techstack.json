@@ -1,0 +1,164 @@
+[
+  {
+    "name": "HTML",
+    "icon": "siHtml5",
+    "progress": 100,
+    "use": "frontend"
+  },
+  {
+    "name": "CSS",
+    "icon": "siCss",
+    "progress": 90,
+    "use": "frontend"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "siJavascript",
+    "progress": 85,
+    "use": "languages"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "siTypescript",
+    "progress": 85,
+    "use": "languages"
+  },
+  {
+    "name": "Java",
+    "icon": "/icons/java.svg",
+    "progress": 80,
+    "use": "languages"
+  },
+  {
+    "name": "C#",
+    "icon": "/icons/csharp.svg",
+    "progress": 70,
+    "use": "languages"
+  },
+  {
+    "name": "Python",
+    "icon": "/icons/python.svg",
+    "progress": 88,
+    "use": "languages"
+  },
+  {
+    "name": "React / React Native",
+    "icon": "siReact",
+    "progress": 90,
+    "use": "frontend"
+  },
+  {
+    "name": "Next.js",
+    "icon": "siNextdotjs",
+    "progress": 85,
+    "use": "frontend"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "siTailwindcss",
+    "progress": 100,
+    "use": "frontend"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "siBootstrap",
+    "progress": 75,
+    "use": "frontend"
+  },
+  {
+    "name": "Node.js",
+    "icon": "siNodedotjs",
+    "progress": 85,
+    "use": "backend"
+  },
+  {
+    "name": "Express.js",
+    "icon": "siExpress",
+    "progress": 70,
+    "use": "backend"
+  },
+  {
+    "name": "Firebase",
+    "icon": "/icons/firebase.svg",
+    "progress": 80,
+    "use": "backend"
+  },
+  {
+    "name": "REST APIs",
+    "icon": "/icons/restapi.svg",
+    "progress": 70,
+    "use": "backend"
+  },
+  {
+    "name": "Prisma",
+    "icon": "siPrisma",
+    "progress": 70,
+    "use": "backend"
+  },
+  {
+    "name": "MySQL",
+    "icon": "/icons/mysql.svg",
+    "progress": 90,
+    "use": "database"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "/icons/postgresql.svg",
+    "progress": 75,
+    "use": "database"
+  },
+  {
+    "name": "Git",
+    "icon": "siGit",
+    "progress": 90,
+    "use": "tools"
+  },
+  {
+    "name": "GitHub",
+    "icon": "siGithub",
+    "progress": 100,
+    "use": "tools"
+  },
+  {
+    "name": "VS Code",
+    "icon": "/icons/vscode.svg",
+    "progress": 100,
+    "use": "tools"
+  },
+  {
+    "name": "Figma",
+    "icon": "/icons/figma.svg",
+    "progress": 100,
+    "use": "tools"
+  },
+  {
+    "name": "Docker",
+    "icon": "siDocker",
+    "progress": 90,
+    "use": "tools"
+  },
+  {
+    "name": "AWS",
+    "icon": "/icons/aws.svg",
+    "progress": 70,
+    "use": "cloud"
+  },
+  {
+    "name": "Azure",
+    "icon": "/icons/azure.svg",
+    "progress": 80,
+    "use": "cloud"
+  },
+  {
+    "name": "Google Cloud",
+    "icon": "/icons/gcloud.svg",
+    "progress": 78,
+    "use": "cloud"
+  },
+  {
+    "name": "Vercel",
+    "icon": "siVercel",
+    "progress": 100,
+    "use": "cloud"
+  }
+]

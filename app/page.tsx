@@ -2,7 +2,8 @@ import Nav from "./navbar/nav";
 import Hero from "./hero/hero";
 import About from "./about/about";
 import Project from "./project/project";
-import Kit from "./kit/kit";
+import Techstack from "./techstack/techstack";
+import Contact from "./contact/contact";
 import Footer from "./footer/footer";
 
 export default function Page() {
@@ -12,7 +13,8 @@ export default function Page() {
       <Hero />
       <About />
       <Project />
-      <Kit />
+      <Techstack />
+      <Contact />
       <Footer />
     </main>    
   )

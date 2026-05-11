@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
@@ -7,123 +8,169 @@ import { FiSun, FiMoon } from "react-icons/fi";
 export default function Nav() {
 
   /**
-   * STATE MANAGEMENT
-   * Tracks which section is currently active (for underline highlight)
+   * ACTIVE SECTION TRACKING
    */
   const [activeSection, setActiveSection] = useState("");
 
   /**
    * THEME SYSTEM
-   * Handles dark/light mode toggle
    */
   const { theme, setTheme } = useTheme();
 
   /**
-   * SCROLL TRACKING LOGIC
-   * Detects which section is currently in view
-   * and updates active navigation link
+   * SCROLL DETECTION
    */
   useEffect(() => {
-    const sections = ["hero", "about", "projects", "kit"];
+    const sections = ["about", "projects", "techstack", "contact"];
 
     const onScroll = () => {
-      const offset = window.scrollY + 250;
+      const offset = window.scrollY + 500;
       let current = "";
 
       sections.forEach((id) => {
         const el = document.getElementById(id);
-        if (el && offset >= el.offsetTop) current = id;
+
+        if (el && offset >= el.offsetTop) {
+          current = id;
+        }
       });
 
       setActiveSection(current);
     };
 
     onScroll();
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
     };
   }, []);
 
   /**
-   * NAVIGATION LINKS CONFIG 
-   * Central place to manage nav items
+   * NAV LINKS
    */
   const links = [
-    { label: "Contact", id: "hero" },
     { label: "About", id: "about" },
     { label: "Projects", id: "projects" },
-    { label: "Kit", id: "kit" },
+    { label: "Stack", id: "techstack" },
+    { label: "Contact", id: "contact" },
   ];
 
   /**
-   * SMOOTH SCROLL HANDLER
-   * Prevents page jump and enables smooth scrolling
+   * SMOOTH SCROLL
    */
   const handleClick = (e, id) => {
     if (window.location.pathname === "/") {
       e.preventDefault();
+
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+
+      if (el) {
+        el.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     }
   };
 
   return (
-    <nav 
-		id="nav"
-		className="fixed top-0 w-full z-50 bg-white/95 dark:bg-slate-950/95 border-b border-gray-200 dark:border-gray-700 backdrop-blur shadow-sm"
-	>
+    <nav
+      id="nav"
+      className="
+        fixed top-0 z-50 w-full
+        border-b border-[#c4c7c7]
+        bg-[#f6f9ff]/80
+        backdrop-blur-md
+      "
+    >
+      <div
+        className="
+          flex h-20
+          items-center justify-between
+          px-5 md:px-16
+        "
+      >
 
-      <div className="flex items-center justify-between h-20 px-12 lg:px-20 w-full">
+        {/* LOGO */}
+        <Link
+          href="/"
+          onClick={(e) => handleClick(e, "hero")}
+          className="text-[24px] font-bold tracking-[-0.04em] text-[#161c22]"
+        >
+          YASMIIN ABDULLAHI
+        </Link>
 
-        {/* LOGO SECTION */}
-        <div>
-          <img
-            src="/logo.svg"
-            alt="logo"
-            className="h-20 w-auto"
-          />
-        </div>
+        {/* NAVIGATION */}
+        <div className="hidden md:flex items-center gap-8">
 
-        {/* NAV LINKS (CENTER) */}
-        <div className="hidden md:flex items-center gap-10">
           {links.map((link) => (
             <Link
               key={link.id}
               href={`/#${link.id}`}
               onClick={(e) => handleClick(e, link.id)}
-              className={`font-medium border-b-2 pb-1 transition ${
-                activeSection === link.id
-                  ? "text-black dark:text-white border-black dark:border-white"
-                  : "text-gray-700 dark:text-gray-300 border-transparent hover:text-black dark:hover:text-white"
-              }`}
+              className={`
+                border-b-2 pb-1
+                text-[14px]
+                font-semibold
+                uppercase
+                tracking-[0.05em]
+                transition-colors
+                ${
+                  activeSection === link.id
+                    ? "border-black text-black"
+                    : "border-transparent text-[#434747] hover:text-black"
+                }
+              `}
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        {/* ACTION BUTTONS (RIGHT SIDE) */}
+        {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
 
-          {/* THEME TOGGLE BUTTON */}
+          {/* THEME TOGGLE */}
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+            onClick={() =>
+              setTheme(theme === "dark" ? "light" : "dark")
+            }
+            className="
+              text-[#434747]
+              transition-colors
+              hover:text-black
+            "
           >
-            {theme === "dark" ? <FiSun /> : <FiMoon />}
+            {theme === "dark" ? (
+              <FiSun size={24} />
+            ) : (
+              <FiMoon size={24} />
+            )}
           </button>
 
-          {/* RESUME DOWNLOAD BUTTON */}
+          {/* RESUME BUTTON */}
           <a
             href="/resume.pdf"
             download="Yasmiin_Abdullahi_Resume.pdf"
-            className="rounded-2xl bg-black dark:bg-white px-6 py-3 font-semibold text-white dark:text-black shadow hover:bg-gray-800 dark:hover:bg-gray-200 transition"
+            className="
+              bg-black
+              px-6
+              py-3
+              text-[14px]
+              font-semibold
+              uppercase
+              tracking-[0.05em]
+              text-white
+              transition-opacity
+              hover:opacity-90
+              rounded-xs
+              hover:-translate-y-1
+              hover:shadow-xl
+              hover:border-black
+            "
           >
-            Resume
+            DOWNLOAD RESUME
           </a>
 
         </div>
