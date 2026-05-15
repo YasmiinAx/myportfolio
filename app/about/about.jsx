@@ -39,7 +39,7 @@ export default function About() {
               hover:grayscale-0
               transition-all duration-700
             "
-            src="/self.png"
+            src="/portrait/ai.png"
             alt="About portrait"
           />
         </div>

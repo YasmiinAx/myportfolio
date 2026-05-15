@@ -72,7 +72,6 @@ export default function Techstack() {
               tracking-[-0.02em]
               text-[#161c22]
               uppercase
-              mb-4
             "
           >
             Tech Stack

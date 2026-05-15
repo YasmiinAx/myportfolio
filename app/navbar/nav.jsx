@@ -98,7 +98,11 @@ export default function Nav() {
           onClick={(e) => handleClick(e, "hero")}
           className="text-[24px] font-bold tracking-[-0.04em] text-[#161c22]"
         >
-          YASMIIN ABDULLAHI
+          <img 
+            src="/logo.svg"
+            alt="Logo"
+            className="inline-block w-20 h-20 ml-2 -mb-1"
+          />
         </Link>
 
         {/* NAVIGATION */}

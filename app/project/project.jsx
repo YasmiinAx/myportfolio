@@ -21,7 +21,7 @@ export default function Project() {
 
         {/* HEADER */}
         <div className="mb-[70px] text-center md:text-left">
-          <h2 className="text-[32px] md:text-[48px] font-semibold tracking-[-0.02em] text-[#161c22] uppercase mb-4">
+          <h2 className="text-[32px] md:text-[48px] font-semibold tracking-[-0.02em] text-[#161c22] uppercase">
             Featured Projects
           </h2>
 
@@ -64,6 +64,8 @@ export default function Project() {
                       cursor-pointer
                       group
                       rounded-lg
+                      opacity-60
+                      hover:opacity-100
                     "
                   >
                     <img
@@ -72,7 +74,7 @@ export default function Project() {
                       className="
                         w-full h-full
                         object-cover
-                        transition-transform duration-700
+                        transition-transform duration-800
                         group-hover:scale-105
                       "
                     />
@@ -88,20 +90,20 @@ export default function Project() {
                 >
 
                   {/* TECH TAGS */}
-                  <div className="flex flex-wrap gap-3 mb-8">
+                  <div className="flex flex-wrap gap-2 mb-8">
                     {project.techStack.map((tech, i) => (
                       <span
                         key={i}
                         className="
-                          px-4 py-1
-                          text-[11px]
+                          px-2 py-1
+                          text-[10px]
                           uppercase
                           tracking-[0.2em]
                           font-semibold
                           bg-[#e8eef6]
                           border border-[#c4c7c7]
                           text-[#161c22]
-                          rounded-xs
+                          rounded-full
                         "
                       >
                         {tech}

@@ -1,29 +1,36 @@
 [
   {
     "id": 1,
-    "title": "Nexus Dashboard",
-    "description": "A high-performance analytics platform with real-time data visualization and a customizable widget system.",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDVto4-1vCrbgRmM4lt6He0WYaBC0En00Psz1fgc2BYu3mEB7w8_JsG6Y6VGv-jdGlyBgrHzPza-fTp4IHZGVcNtoj2BaKPc9yrc8po1shG1Duk8KwTMJgmz_Z1wP-_jePbjadXt-bq4roDTFsWX3G-rt5yEpIPvIDwsafEf7mLSNjaiLL4ETQJ9uro-hRE0tigpuZQEN6C0ddZimi1xSkNF5lyH6DzXYtgeaUgI25u9XmPVHbrDXJU7FpuqnX7JW9Mc6PEYAbzlCM",
-    "techStack": ["React", "Tailwind"],
-    "demoLink": "#",
-    "codeLink": "#"
+    "title": "FITLYF",
+    "description": "An AI-driven mobile platform designed to deliver personalized workout and nutrition plans alongside real-time progress tracking and motivational avatars. It bridges the gap between generic fitness apps and real results by making professional-grade coaching accessible and affordable for all users.",
+    "image": "/projects/fitlyf.png",
+    "techStack": ["React Native", "Typescript", "Tailwind", "Node.js", "Express", "PostgreSQL", "Google Cloud", "Firebase", "Prisma"],
+    "demoLink": "#"
   },
   {
     "id": 2,
-    "title": "Task Manager Pro",
-    "description": "A collaborative task management tool with real-time updates, team collaboration features, and intelligent priority tracking.",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDVto4-1vCrbgRmM4lt6He0WYaBC0En00Psz1fgc2BYu3mEB7w8_JsG6Y6VGv-jdGlyBgrHzPza-fTp4IHZGVcNtoj2BaKPc9yrc8po1shG1Duk8KwTMJgmz_Z1wP-_jePbjadXt-bq4roDTFsWX3G-rt5yEpIPvIDwsafEf7mLSNjaiLL4ETQJ9uro-hRE0tigpuZQEN6C0ddZimi1xSkNF5lyH6DzXYtgeaUgI25u9XmPVHbrDXJU7FpuqnX7JW9Mc6PEYAbzlCM",
-    "techStack": ["Next.js", "PostgreSQL", "Node.js"],
-    "demoLink": "#",
-    "codeLink": "#"
+    "title": "Boo n' Goods",
+    "description": "A comprehensive Halloween hub that centralizes seasonal preparation by allowing users to explore costume collections, access a secure movie library, and organize community events. It streamlines the holiday experience by providing a single, thematic destination for browsing, planning, and engagement.",
+    "image": "/projects/boongoods.png",
+    "techStack": ["React", "JavaScript", "Tailwind", "Next.js", "Firebase"],
+    "demoLink": "https://cprg306-final-one.vercel.app/",
+    "codeLink": "https://github.com/YasmiinAx/cprg306-final"
   },
   {
     "id": 3,
-    "title": "Design System",
-    "description": "A comprehensive design system with reusable components, accessibility guidelines, and interactive documentation.",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDVto4-1vCrbgRmM4lt6He0WYaBC0En00Psz1fgc2BYu3mEB7w8_JsG6Y6VGv-jdGlyBgrHzPza-fTp4IHZGVcNtoj2BaKPc9yrc8po1shG1Duk8KwTMJgmz_Z1wP-_jePbjadXt-bq4roDTFsWX3G-rt5yEpIPvIDwsafEf7mLSNjaiLL4ETQJ9uro-hRE0tigpuZQEN6C0ddZimi1xSkNF5lyH6DzXYtgeaUgI25u9XmPVHbrDXJU7FpuqnX7JW9Mc6PEYAbzlCM",
-    "techStack": ["React", "Storybook", "Tailwind"],
-    "demoLink": "#",
-    "codeLink": "#"
+    "title": "MadeEasy",
+    "description": "A dynamic productivity application designed to help users organize daily schedules through an integrated calendar and task management system. The platform features visual performance dashboards and intuitive scheduling tools to help individuals monitor progress and stay accountable to their goals.",
+    "image": "/projects/madeeasy.png",
+    "techStack": ["React Native", "JavaScript", "Next.js", "PostgreSQL", "Node.js"],
+    "codeLink": "https://github.com/YasmiinAx/MadeEasyApp"
+  },
+  {
+    "id": 4,
+    "title": "myPortfolio",
+    "description": "A professional showcase of full-stack development and design projects highlighting expertise in React Native, computer vision, and secure system architecture. It serves as a central gallery for technical case studies, demonstrating a commitment to building high-contrast, accessible, and user-centric digital solutions.",
+    "image": "/projects/portfolio.png",
+    "techStack": ["React", "JavaScript", "Tailwind", "Next.js"],
+    "demoLink": "https://yasmiinportfolio.vercel.app/",
+    "codeLink": "https://github.com/YasmiinAx/MadeEasyApp"
   }
 ]
